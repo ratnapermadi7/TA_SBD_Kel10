@@ -49,6 +49,7 @@
         <div class="container mt-5">
     <!-- Form Produk -->
     <form method="POST" enctype="multipart/form-data" action="{{ route('pelanggan-update', $dataPelanggan->id_pelanggan) }}">
+        
         @CSRF
         <h2>Form Produk</h2>
         <div class="mb-3">

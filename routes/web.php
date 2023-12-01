@@ -36,6 +36,8 @@ Route::get('/pelanggan/create', [PelangganController::class, 'create'])->name('p
 Route::post('/pelanggan/store', [PelangganController::class, 'storePelanggan'])->name('pelanggan-store');
 Route::get('/showpelanggan/{id_pelanggan}', [PelangganController::class, 'showPelanggan'])->name('pelanggan-show');
 Route::post('/pelanggan/update{id_pelanggan}', [PelangganController::class, 'updatePelanggan'])->name('pelanggan-update');
+// Route::post('/pelanggan/update/{id_pelanggan}', [PelangganController::class, 'updatePelanggan'])->name('pelanggan-update');
+
 Route::get('/pelanggan/delete/{id_pelanggan}', [PelangganController::class, 'deletePelanggan'])->name('pelanggan-delete');
 
 Route::get('/merk', [MerkController::class, 'index'])->name('merk-index');

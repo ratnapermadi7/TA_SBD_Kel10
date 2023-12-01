@@ -10,7 +10,7 @@ class Pelanggans extends Model
     use HasFactory;
     protected $table = 'transaksi_tbs'; // Replace 'nama_tabel' with the actual table name
 
-    protected $primaryKey = 'id_transactions';
+    protected $primaryKey = 'id_transaction';
 
     protected $fillable = [
         'fk_id_pelanggan',
