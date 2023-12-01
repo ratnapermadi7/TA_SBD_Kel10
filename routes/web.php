@@ -57,6 +57,7 @@ Route::post('/transaksi/update{id_transaction}', [TransaksiController::class, 'u
 Route::get('/transaksi/delete/{id_transaction}', [TransaksiController::class, 'deleteTrans'])->name('trans-delete');
 Route::get('/transaksi/softdelete{id_transaction}', [TransaksiController::class, 'softDelete'])->name('trans-softdelete');
 
+Route::get('/trans/search', [TransaksiController::class, 'searchTransactions'])->name('trans-search');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

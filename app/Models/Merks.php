@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Merks extends Model
 {
     use HasFactory;
+    use SoftDelete;
 
     protected $table = 'merks'; // Replace 'nama_tabel' with the actual table name
 

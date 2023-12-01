@@ -60,16 +60,19 @@ INSERT INTO transaksi_tb (id_transactions, fk_id_pelanggan, fk_id_item, transact
 -- Inner Join antara tabel transaksi_tb, pelanggan, dan produk
 SELECT
     transaksi_tb.id_transactions,
-    pelanggan.nama_pelanggan,
-    produk.nama_barang,
-    transaksi_tb.transaction_date,
-    transaksi_tb.item_amount
+    pelanggans.nama_pelanggan,
+    produks.nama_barang,
+    merks.nama_merk,
+    transaksi_tbs.transaction_date,
+    transaksi_tbs.item_amount
 FROM
-    transaksi_tb
+    transaksi_tbs
 INNER JOIN
-    pelanggan ON transaksi_tb.fk_id_pelanggan = pelanggan.id_pelanggan
+    pelanggans ON transaksi_tbs.fk_id_pelanggan = pelanggans.id_pelanggan
 INNER JOIN
-    produk ON transaksi_tb.fk_id_item = produk.id_item;
+    produks ON transaksi_tbs.fk_id_item = produks.id_item;
+INNER JOIN
+    merks ON produks.fk_id_merk = merks.id_merk;
 
 -- IN
 SELECT *
