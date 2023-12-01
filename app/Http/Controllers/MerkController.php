@@ -10,9 +10,12 @@ class MerkController extends Controller
 {
     public function index()
     {
-        $dataMerk = DB::table('merks')
-            ->whereNull('deleted_at') 
-            ->get();
+        // $dataMerk = DB::table('merks')
+        //     ->whereNull('deleted_at') 
+        //     ->get();
+
+        $dataMerk = DB::table('merks')->get();
+    return view('merk-index', compact('dataMerk'));
 
         return view('merk-index', compact('dataMerk'));
     }

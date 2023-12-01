@@ -122,4 +122,29 @@ class TransaksiController extends Controller
 
         return view('trans-join', compact('data'));
     }
+
+    public function searchTransactions(Request $request) {
+        $keyword = $request->input('keyword');
+
+        $data = DB::table('transaksi_tbs')
+            ->select(
+                'transaksi_tbs.id_transaction AS id_transaction',
+                'pelanggans.nama_pelanggan AS nama_pelanggan',
+                'produks.nama_barang AS nama_barang',
+                'merks.nama_merk AS nama_merk',
+                'transaksi_tbs.transaction_date AS transaction_date',
+                'transaksi_tbs.item_amount AS item_amount'
+            )
+            ->join('pelanggans', 'transaksi_tbs.fk_id_pelanggan', '=', 'pelanggans.id_pelanggan')
+            ->join('produks', 'transaksi_tbs.fk_id_item', '=', 'produks.id_item')
+            ->join('merks', 'produks.fk_id_merk', '=', 'merks.id_merk')
+            ->where('pelanggans.nama_pelanggan', 'LIKE', "%$keyword%")
+            ->orWhere('produks.nama_barang', 'LIKE', "%$keyword%")
+            ->orWhere('merks.nama_merk' ,'LIKE', "%$keyword%")
+            ->get();
+
+        return view('trans-join', compact('data'));
+    }
 }
+
+

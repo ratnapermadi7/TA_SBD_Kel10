@@ -24,10 +24,13 @@
                     <a class="nav-link" href="{{ route('produk-index') }}">Produk</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('merk-index')}}">Merk</a>
+                    <a class="nav-link" href="{{ route('merk-index')}}">Merk</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('trans-index')}}">Transaksi</a>
+                    <a class="nav-link" href="{{route ('trans-index') }}">Transaksi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('trans-join') }}">Inner Join</a>
                 </li>
 
             </ul>
